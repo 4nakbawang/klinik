@@ -51,8 +51,8 @@ class Perencanaan extends CI_Controller {
 										where a.id ="'.$id_perencanaan.'"
 										order by id desc')->row_array();
 			$data['detil'] = $this->db->query('select * from perencanaan_det where id_perencanaan ="'.$id_perencanaan.'"')->result_array();
-			$data['pptk'] = $this->db->query('select * from m_pptk where status ="ACTIVE"')->result_array();
-			$data['br'] = $this->db->query('select * from m_barang')->result_array();
+			$data['pptk']  = $this->db->query('select * from m_pptk where status ="ACTIVE"')->result_array();
+			$data['br']    = $this->db->query('select * from m_barang')->result_array();
 			$this->load->view('perencanaan/vPerencanaanDet', $data);
 		}
 		else
